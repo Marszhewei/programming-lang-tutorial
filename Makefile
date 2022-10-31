@@ -1,8 +1,8 @@
 #makefile
 
-vpath %.cc type point macro stl stream function reference
+vpath %.cc type point macro stl stream function reference namespace
 
-CC := clang++
+CC := g++
 RM := rm -f
 
 TARGET := out
