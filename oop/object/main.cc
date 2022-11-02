@@ -22,12 +22,20 @@ int main(int argc, char **argv)
     std::pair<int32_t, int32_t> p = c.get_pos();
     std::cout << "posx : " << p.first << ',' << "posy : " << p.second << std::endl;
 
-    Calc a;
-    a.set_pos(5, 6);
-    a.calc_area();
-    std::cout << "area is: " << a.get_area() << std::endl;
+    Calc *a = new Calc;
+    a->set_pos(5, 6);
+    a->calc_area();
+    std::cout << "area is: " << a->get_area() << std::endl;
+    delete a;
+    a = nullptr;
 
-    // const 
+    // const member function
+    const Calc cc = Calc(x, y);
+    // we can't promise not to change invoking objecta, use void show() const;
+    cc.show();
+
+    /* special form for one-argument constructors */
+    // class_name obj = rvalue;
 
     return 0;
 }
