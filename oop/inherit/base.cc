@@ -18,10 +18,12 @@ TableTennisPlayer::TableTennisPlayer(const std::string &fn,
         m_last_name(ln), m_has_table(ht) {}
 
 
-/* TableTennisPlayer::TableTennisPlayer(const TableTennisPlayer &tp)
+TableTennisPlayer::TableTennisPlayer(const TableTennisPlayer &tp)
 {
-    *this = tp;
-} */
+    this->m_first_name = tp.m_first_name;
+    this->m_last_name = tp.m_last_name;
+    this->m_has_table = tp.m_has_table;
+}
 
 
 void TableTennisPlayer::name() const

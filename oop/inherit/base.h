@@ -26,6 +26,7 @@ private:
 public:
     TableTennisPlayer(const std::string &fn = "none",
                     const std::string &ln = "none", bool ht = false);
+    TableTennisPlayer(const TableTennisPlayer &tp);
     void name() const;
     bool has_table() const { return this->m_has_table; }
     void reset_table(bool flag) { this->m_has_table = flag; } 

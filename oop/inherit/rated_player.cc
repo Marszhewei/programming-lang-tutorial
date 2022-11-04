@@ -10,7 +10,7 @@
  */
 
 
-#include "rated_player.hpp"
+#include "rated_player.h"
 
 
 RatedPlayer::RatedPlayer(uint32_t r,
@@ -23,13 +23,6 @@ RatedPlayer::RatedPlayer(uint32_t r,
 
 
 /* or */
-/* RatedPlayer::RatedPlayer(uint32_t r, const std::string &fn,
-                    const std::string &ln, bool ht)
-{
-    this->m_rating = r;
-} */
-
-// RatedPlayer::RatedPlayer(uint32_t r, const TableTennisPlayer &tp)
-//                         : TableTennisPlayer(tp), m_rating(r) {}
-
+RatedPlayer::RatedPlayer(uint32_t r, const TableTennisPlayer &tp)
+                        : TableTennisPlayer(tp),  m_rating(r) {}
 
