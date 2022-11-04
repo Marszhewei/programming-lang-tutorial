@@ -62,6 +62,8 @@ namespace XDU
         this->m_ayeer = new int32_t[this->Months];
         this->m_aweek = new int32_t[this->Days];
     }
+    // or
+    // inline Calc::Calc(int32_t posx, int32_t posy) : m_posx(posx), m_posy(posy) {}
 };
 
 

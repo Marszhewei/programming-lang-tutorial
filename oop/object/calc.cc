@@ -33,7 +33,7 @@ namespace XDU
 
     void Calc::calc_area()
     {
-        this->m_area = this->m_posx * m_posy;
+        this->m_area = this->m_posx * this->m_posy;
     }
 
     void Calc::show() const
