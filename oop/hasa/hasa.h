@@ -58,6 +58,11 @@ class StudentP : private std::string, private std::valarray<double>
 private:
     std::ostream &arr_out(std::ostream &os) const;
 public:
+    // we can use max() and min() out of class
+    // The using declaration only works for inheritance, not for inclusion
+    using std::valarray<double>::min;
+    using std::valarray<double>::max;
+
     StudentP() : std::string("null student"), std::valarray<double>() {}
     explicit StudentP(const std::string &name) : std::string(name), std::valarray<double>() {}
     explicit StudentP(int32_t n) : std::string("null student"), std::valarray<double>(n) {}
