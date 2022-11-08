@@ -1,9 +1,9 @@
 /**
- * @file dynamic_cast.cc
- * @author fetch150zy (Mars_zhewei@outlook.com)
+ * @file typeid.cc
+ * @author fetch140zy (Mars_zhewei@outlook.com)
  * @brief 
  * @version 0.1
- * @date 2022-11-07
+ * @date 2022-11-08
  * 
  * @copyright Copyright (c) 2022
  * 
@@ -13,7 +13,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-#include <typeinfo>     // for bad_cast
+#include <typeinfo>
 
 
 class Grand
@@ -51,7 +51,6 @@ public:
 
 Grand *get_one();
 
-
 int main(int argc, char **argv)
 {
     std::srand(std::time(0));
@@ -59,19 +58,16 @@ int main(int argc, char **argv)
     Superb *ps;
     for (int i = 0; i < 5; ++i) {
         pg = get_one();
+        std::cout << "now processing type " << typeid(*pg).name() << ".\n";
         pg->speak();
         if (ps = dynamic_cast<Superb *>(pg))
             ps->say();
-
-        // use reference
-        /* try {
-            Superb &rs = dynamic_cast<Superb &>(rg);
-        } catch (std::bad_cast &) {
-
-        } */
+        if (typeid(Magnificent) == typeid(*pg))
+            std::cout << "yes, you're rellay magnificent.\n";
     }
     return 0;
 }
+
 
 Grand *get_one()
 {
