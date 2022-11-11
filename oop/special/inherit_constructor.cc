@@ -36,10 +36,42 @@ public:
 };
 
 
+class BS
+{
+private:
+    int q;
+    double w;
+public:
+    BS() : q(0), w(0) {}
+    BS(int k) : q(k), w(100) {}
+    BS(double x) : q(-1), w(x) {}
+    BS(int k, double x) : q(k), w(x) {}
+    void show() const { std::cout << q << ", " << w << '\n'; }
+};
+
+class DR : public BS
+{
+private:
+    short j;
+public:
+    using BS::BS;
+    DR() : j(-100) {}
+    DR(double x) : BS(2 * x), j(int(x)) {}
+    DR(int i) : j(-2), BS(i, 0.5 * i) {}
+    void show() const { std::cout << j << ", "; BS::show(); }
+};
+
+
+
 int main(int argc, char **argv)
 {
     C2 c2;
     c2.fn(3.4);
+
+
+    DR o1;              // use DR()
+    DR o2(18.81);       // use DR(double) instead of BS(double)
+    DR o3(10, 1.8);     // use BS(int, double)
 
     return 0;
 }
