@@ -1,3 +1,5 @@
 ## programming language tutorial
 
-> now just cpp
+- **cpp**
+- **golang**
+- **python**
